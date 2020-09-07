@@ -40,3 +40,11 @@ function tambah($data)
 
   return mysqli_affected_rows($conn);
 }
+
+
+function hapus($id)
+{
+  $conn = koneksi();
+  mysqli_query($conn, "DELETE FROM mahasiswa WHERE id = $id") or die(mysqli_error($conn));
+  return mysqli_affected_rows($conn);
+}
